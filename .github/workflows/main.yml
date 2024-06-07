@@ -1,0 +1,23 @@
+name: Run Processing Sketch
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Processing
+      run: |
+        sudo apt-get update
+        sudo apt-get install default-jre -y
+        wget https://github.com/benfry/processing4/releases/download/processing-1293-4.3/processing-4.3-linux-arm64.tgz
+        tar xvf processing-4.3-linux-arm64.tgz
+        sudo mv processing-4.3 /opt/processing
+
+    - name: Run Processing Sketch
+      run: |
+        /opt/processing/processing-java --sketch=$GITHUB_WORKSPACE/Oyasumimendakosan.pde --run
