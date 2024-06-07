@@ -20,4 +20,4 @@ jobs:
 
     - name: Run Processing Sketch
       run: |
-        /opt/processing/processing-java --sketch=$GITHUB_WORKSPACE/Oyasumimendakosan --run
+        /opt/processing/processing-java --sketch=$GITHUB_WORKSPACE --run
