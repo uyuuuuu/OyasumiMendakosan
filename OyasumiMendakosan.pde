@@ -48,7 +48,9 @@ void draw() {
     }
     ringNum=1;
     break;
+
   //////////////////////////////////////////////////////////
+
   case 1:  //ゲーム画面
     tint(255.0,130);
     sum=0;
@@ -111,7 +113,7 @@ void draw() {
 }
 
 //////////////////////////////////////////////
-//関数
+
 //リングに入ったかの判定
 void getPoint(float mx, float my, float rx, float ry, float d) {
   if (rx-d/4<=mx && mx<=rx+d/4 && my>ry-3 && my<ry+3) {
@@ -147,7 +149,7 @@ boolean finished() {
 }
 
 ////////////////////////////////////////////////////
-/////////////メンダコ
+// メンダコ
 class Mendako {
   final float gravity=2.0/60;
   float x, y, dx, dy, vy;
